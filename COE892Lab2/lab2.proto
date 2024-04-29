@@ -1,0 +1,54 @@
+syntax = "proto3";
+//https://grpc.io/docs/languages/python/basics/
+service GroundControl{
+    rpc GetMap (BotId) returns (Map){}
+
+    rpc GetCommands (Test) returns (Test){}
+
+    rpc GetMineSerial (Test) returns (Test){}
+
+    rpc ShareFinish (Test) returns (Test){}
+
+    rpc ShareMinePin (Test) returns (Test){}
+
+}
+
+//service GetCommands{
+//
+//}
+//
+//service GetMineSerial{
+//
+//}
+//
+//service ImDone{
+//
+//}
+//
+//service ShareMinePin{
+//
+//}
+
+message BotId{
+    int32 Id = 1;
+}
+
+message Map{
+    string Map = 1;
+}
+
+message Commands{
+    string Commands = 1;
+}
+
+message MineSerial{
+    string MineSerial = 1;
+}
+
+message MinePin{
+    string MinePine = 1;
+}
+
+message Test{
+    string name = 1;
+}

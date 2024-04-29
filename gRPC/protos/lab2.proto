@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.myhelloworld";
+option java_outer_classname = "Lab2Proto";
+option objc_class_prefix = "HLW";
+
+service groundControl{
+  rpc getMap(filename) returns(MapArray){}
+}
+
+service CommandService{
+  rpc getCommand(botID) returns(moveString){}
+}
+
+service MineSerialService{
+  rpc getMineSerial(mineRand) returns(mineSerialInt){}
+}
+
+service commandCompletionNotification{
+  rpc notifyServer(notify) returns(confirmation){}
+}
+
+service incomingMinePin{
+  rpc shareMinePin(minePin) returns(confirmation){}
+}
+
+message filename{
+  string f = 1;
+}
+
+message MapArray{
+  string ma = 1;
+  int32 columns = 2;
+  int32 rows = 3;
+}
+
+message botID{
+  int32 bi = 1;
+}
+
+message moveString{
+  string ms = 1;
+}
+
+message mineRand{
+  int32 mr = 1;
+}
+
+message mineSerialInt{
+  int32 msi = 1;
+}
+
+message notify{
+  bool n = 1;
+  int32 bi = 2;
+}
+
+message confirmation{
+  string c = 1;
+}
+
+message minePin{
+  string mp = 1;
+  int32 bi = 2;
+}
+
+
+

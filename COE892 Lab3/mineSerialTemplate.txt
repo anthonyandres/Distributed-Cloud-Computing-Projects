@@ -1,0 +1,9 @@
+04:788972
+11:178515
+24:128589
+30:370268
+32:379174
+34:795183
+
+NOTE:
+the left part of the colon refers to the coordinates of the mine 04 refers to [0][4] of the map array. It also represents the ID of the mine. The right side of the colon refers to the mine serial number
